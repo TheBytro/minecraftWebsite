@@ -24,7 +24,7 @@ def get_server_info() -> dict:
             "state": "Running",
             "players": status.players.online,
             "max_players": status.players.max,
-            "latency": status.latency,
+            "latency": str(round(status.latency, 2)),
             "version": status.version.name,
             "player_names": server.query().players.list,
             "description": status.raw["description"]["text"]
