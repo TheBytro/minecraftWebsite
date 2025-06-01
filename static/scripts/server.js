@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
           playerlist.innerHTML = data["player_names"].map((name) => {
             return "<li>" + name + "</li>";
           });
+          butt.style.visibility = "collapse";
         } else {
           playercount.textContent = "";
           version.textContent = "";
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
           maxplayers.textContent = "";
           latency.textContent = "";
           playerlist.textContent = "";
+          butt.style.visibility = "visible";
         }
         console.log(data);
       });
