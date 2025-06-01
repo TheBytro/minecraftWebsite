@@ -1,7 +1,6 @@
 """
 Khymari Sandy
 """
-
 import subprocess
 from mcstatus import JavaServer
 import pygetwindow as gw
@@ -56,4 +55,4 @@ def stats():
     return jsonify(get_server_info())
 
 if __name__ == '__main__':
-    app.run(host='172.30.84.148', port=8475)
+    app.run(host='127.0.0.1', port=8475)
