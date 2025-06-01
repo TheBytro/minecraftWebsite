@@ -85,6 +85,7 @@ main {
 }
 p,
 button {
+  margin: 1.25vmin 0 0 0;
   width: 50svw;
   background-color: #6f6e6f;
   padding: 2.5vmin;
