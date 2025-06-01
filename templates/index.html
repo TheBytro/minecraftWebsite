@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <title>Minecraft Launcher</title>
     <link rel="stylesheet" href="../static/styles/index.css" />
-    <script src="{{ url_for('static', filename='scripts/server.js')}}"></script>
+    <script
+      src="{{ url_for('static', filename='scripts/server.js')}}"
+      defer
+    ></script>
     <script
       src="{{ url_for('static', filename='scripts/script.js')}}"
       defer
@@ -31,8 +34,10 @@
       <p>Online Players: <span id="player-count"></span></p>
       <p>Max Players: <span id="max-players"></span></p>
       <p>Latency: <span id="latency"></span></p>
-      <p>Players:</p>
-      <ul id="player-list"></ul>
+      <div>
+        <p>Players:</p>
+        <ul id="player-list"></ul>
+      </div>
       <button id="start-server" type="button">Start</button>
     </main>
   </body>
