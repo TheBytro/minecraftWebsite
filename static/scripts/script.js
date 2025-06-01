@@ -446,7 +446,6 @@ const splashTexts = [
   "Joule is neat too!",
 ];
 const h2 = document.querySelector("h2");
-const interval = setInterval(() => {}, 10000);
 
 document.addEventListener("DOMContentLoaded", () => {
   updateSplash();
@@ -456,6 +455,3 @@ document.addEventListener("DOMContentLoaded", () => {
 function updateSplash() {
   h2.textContent = splashTexts[Math.floor(Math.random() * splashTexts.length)];
 }
-
-const ul = document.querySelector("ul");
-let lis = Array.from(ul.querySelectorAll("li"));
