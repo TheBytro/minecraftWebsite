@@ -2,6 +2,8 @@
 Khymari Sandy
 """
 import subprocess
+
+import requests
 from mcstatus import JavaServer
 import pygetwindow as gw
 from flask import Flask, render_template, jsonify
@@ -26,7 +28,7 @@ def get_server_info() -> dict:
             "max_players": status.players.max,
             "latency": str(round(status.latency, 2)),
             "version": status.version.name,
-            "player_names": server.query().players.list,
+            "player_names": get_player_uuids(server.query().players.list),
             "description": status.raw["description"]["text"]
         }
     except Exception as e:
@@ -40,6 +42,14 @@ def is_minecraft_running() -> bool:
     if "Minecraft Server CMD" in gw.getAllTitles():
         return True
     return False
+
+def get_player_uuids(players: list) -> dict:
+    """Gets the uuids of all the players"""
+    info = {}
+    players_info = requests.post("https://api.mojang.com/profiles/minecraft", json=players).json()
+    for player in players_info:
+        info[player["name"]] = player["id"]
+    return info
 
 @app.route('/start/', methods=['POST'])
 def start() -> None:
