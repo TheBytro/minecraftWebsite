@@ -30,10 +30,23 @@ document.addEventListener("DOMContentLoaded", function () {
           description.textContent = data["description"];
           maxplayers.textContent = data["max_players"];
           latency.textContent = data["latency"] + "ms";
-          playerlist.innerHTML = data["player_names"].map((name) => {
-            return "<li>" + name + "</li>";
-          });
+          playerlist.innerHTML = Object.keys(data["player_names"])
+            .map(
+              (name) =>
+                `<li>
+              <img src="https://crafatar.com/avatars/${
+                data["player_names"][name]
+              }?overlay&size=80" alt="${name} avatar">
+              <div>
+              ${name.trim()}<input type="hidden" value="${
+                  data["player_names"][name]
+                }">
+              </div></li>`
+            )
+            .join("");
+
           butt.style.visibility = "collapse";
+          butt.style.display = "none";
         } else {
           playercount.textContent = "";
           version.textContent = "";
@@ -42,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
           latency.textContent = "";
           playerlist.textContent = "";
           butt.style.visibility = "visible";
+          butt.style.display = "block";
         }
         console.log(data);
       });
