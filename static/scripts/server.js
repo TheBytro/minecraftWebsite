@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded", function() {
     butt.addEventListener("click", start_server)
 
     function start_server() {
-        if (status.innerText === "Offline") {
+        if (status.textContent === "Offline") {
             const request = new XMLHttpRequest()
             request.open("POST", "/start", true)
             request.send()
-            status.innerText = "Launching..."
+            status.textContent = "Launching..."
         }
     }
 
@@ -23,21 +23,21 @@ document.addEventListener("DOMContentLoaded", function() {
         fetch('/api/stats')
         .then(response => response.json())
         .then(data => {
-            status.innerText = data['state'];
+            status.textContent = data['state'];
             if (data['state'] !== "Offline") {
-                playercount.innerText = data['players'];
-                version.innerText = data['version'];
-                description.innerText = data['description'];
-                maxplayers.innerText = data['max_players'];
-                latency.innerText = data['latency'] + "ms";
-                playerlist.innerText = data['player_names'];
+                playercount.textContent = data['players'];
+                version.textContent = data['version'];
+                description.textContent = data['description'];
+                maxplayers.textContent = data['max_players'];
+                latency.textContent = data['latency'] + "ms";
+                playerlist.textContent = data['player_names'];
             } else {
-                playercount.innerText = "";
-                version.innerText = "";
-                description.innerText = "";
-                maxplayers.innerText = "";
-                latency.innerText = "";
-                playerlist.innerText = "";
+                playercount.textContent = "";
+                version.textContent = "";
+                description.textContent = "";
+                maxplayers.textContent = "";
+                latency.textContent = "";
+                playerlist.textContent = "";
             }
             console.log(data)
         })
