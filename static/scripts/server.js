@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 maxplayers.textContent = data['max_players'];
                 latency.textContent = data['latency'] + "ms";
                 playerlist.textContent = data['player_names'];
+                butt.style.visibility = "collapse";
             } else {
                 playercount.textContent = "";
                 version.textContent = "";
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 maxplayers.textContent = "";
                 latency.textContent = "";
                 playerlist.textContent = "";
+                butt.style.visibility = "visible";
             }
             console.log(data)
         })
