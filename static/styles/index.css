@@ -84,7 +84,8 @@ main {
   padding: 2.5vmin 0 3.75vmin 0;
 }
 p,
-button {
+button,
+li {
   margin: 1.25vmin 0 0 0;
   width: 50svw;
   background-color: #6f6e6f;
@@ -103,7 +104,13 @@ button {
 button:hover {
   border: 0.625vmin solid #fefffe;
 }
-
+ul {
+  list-style-type: none;
+  padding: 0 0 0 15vmin;
+}
+ul li {
+  width: calc(50svw - 15vmin);
+}
 @keyframes splash {
   from {
     scale: 1;
