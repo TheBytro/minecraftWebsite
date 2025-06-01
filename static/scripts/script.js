@@ -456,3 +456,6 @@ document.addEventListener("DOMContentLoaded", () => {
 function updateSplash() {
   h2.textContent = splashTexts[Math.floor(Math.random() * splashTexts.length)];
 }
+
+const ul = document.querySelector("ul");
+let lis = Array.from(ul.querySelectorAll("li"));
