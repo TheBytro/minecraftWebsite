@@ -1,29 +1,113 @@
-main {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    border: 0.5em dashed grey;
-    margin: 1em;
-    padding: 1em;
+@font-face {
+  font-family: "Minecraft";
+  src: url("/static/assets/fonts/Minecraft.ttf") format("truetype");
 }
-header {
-
+@font-face {
+  font-family: "Minecraftory";
+  src: url("/static/assets/fonts/Minercraftory.ttf") format("truetype");
 }
-h1 {
-    margin: 0;
-    background: black;
-    color: white;
-    text-align: center;
-    padding: 10svh;
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  min-height: 100svh;
+  width: 100%;
+  max-width: 100svw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "Minecraft";
 }
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  background-image: url("../assets/images/wallpaper.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+header {
+  height: 15svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+h1 {
+  font-family: "Minecraftory", "Minecraft";
+  text-align: center;
+  color: #c8beb9;
+  -webkit-text-stroke: 1px #02040c;
+
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4vmin;
+
+  transform: perspective(75em) rotateX(30deg);
+  border-color: rgb(213, 220, 226) rgb(213, 220, 226) rgb(184, 194, 204);
+}
+h1 span {
+  margin: 0 0.625vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h1 span img {
+  height: 5vmin;
+}
+h2 {
+  color: #feff01;
+  letter-spacing: 0.25ch;
+  text-shadow: 0.3125vmin 0.46875vmin 0 #181800;
+  text-align: center;
+
+  position: absolute;
+  bottom: 0;
+  right: 10vmin;
+  rotate: -5deg;
+
+  animation-name: splash;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  padding: 2.5vmin 0 3.75vmin 0;
+}
+p,
+button {
+  width: 50svw;
+  background-color: #6f6e6f;
+  padding: 2.5vmin;
+  border: 0.625vmin solid #010100;
+  box-shadow: inset 0.9375vmin 0 0 0 #939595, inset 0 0.625vmin 0 0 #a8a9a9,
+    inset 0 -0.78125vmin 0 0 #575656, inset -0.625vmin 0 0 0 #515150;
+  text-align: center;
+  color: #ededed;
+  font-size: 2.5vmin;
+  font-family: "Minecraft";
+}
+button {
+  cursor: pointer;
+}
+button:hover {
+  border: 0.625vmin solid #fefffe;
 }
 
-button {
-    font-size: 1.5em;
-    color: green;
+@keyframes splash {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.25;
+  }
 }

@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Homepage</title>
-        <link rel="stylesheet" href="../static/styles/index.css">
-        <script src="../static/scripts/server.js"></script>
-    </head>
-    <body>
-        <header>
-            <h1>Welcome to the Comp Sci server Launcher!</h1>
-        </header>
-        <main>
-            <p>Server ip: {{ info[0] | safe }}:{{ info[1] | safe }}</p>
-            <p>Server Version: <span id="version"></span></p>
-            <p>Description: <span id="description"></span></p>
-            <p>Server Status: <span id="status"></span></p>
-            <p>Online Players: <span id="player-count"></span></p>
-            <p>Max Players: <span id="max-players"></span></p>
-            <p>Latency: <span id="latency"></span></p>
-            <p>Players:</p>
-            <ul id="player-list"></ul>
-            <button id="start-server" type="button">Start</button>
-        </main>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Minecraft Launcher</title>
+    <link rel="stylesheet" href="../static/styles/index.css" />
+    <script src="{{ url_for('static', filename='scripts/server.js')}}"></script>
+    <script
+      src="{{ url_for('static', filename='scripts/script.js')}}"
+      defer
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Welcome to the Comp Sci
+        <span
+          ><img
+            src="{{ url_for('static', filename='assets/images/minecraft.png')}}"
+            alt="minecraft"
+        /></span>
+        Server Launcher
+      </h1>
+      <h2></h2>
+    </header>
+    <main>
+      <p>Server ip: {{ info[0] | safe }}:{{ info[1] | safe }}</p>
+      <p>Server Version: <span id="version"></span></p>
+      <p>Description: <span id="description"></span></p>
+      <p>Server Status: <span id="status"></span></p>
+      <p>Online Players: <span id="player-count"></span></p>
+      <p>Max Players: <span id="max-players"></span></p>
+      <p>Latency: <span id="latency"></span></p>
+      <p>Players:</p>
+      <ul id="player-list"></ul>
+      <button id="start-server" type="button">Start</button>
+    </main>
+  </body>
 </html>
