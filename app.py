@@ -32,6 +32,7 @@ def get_server_info() -> dict:
             "description": status.raw["description"]["text"]
         }
     except Exception as e:
+        print(e)
         return {
             "state": "Launching..." if is_minecraft_running() else "Offline",
             "error": str(e)
@@ -46,6 +47,8 @@ def is_minecraft_running() -> bool:
 def get_player_uuids(players: list) -> dict:
     """Gets the uuids of all the players"""
     info = {}
+    if players == []:
+        return info
     players_info = requests.post("https://api.mojang.com/profiles/minecraft", json=players).json()
     for player in players_info:
         info[player["name"]] = player["id"]
