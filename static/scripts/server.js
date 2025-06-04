@@ -44,8 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
               </div></li>`
             )
             .join("");
-
-          butt.style.visibility = "collapse";
+          if (playerlist.innerHTML === ""){
+            playerlist.style.visibility = "none";
+          } else {
+            playerlist.style.display = "block";
+          }
           butt.style.display = "none";
         } else {
           playercount.textContent = "";
@@ -53,9 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
           description.textContent = "";
           maxplayers.textContent = "";
           latency.textContent = "";
-          playerlist.textContent = "";
-          butt.style.visibility = "visible";
           butt.style.display = "block";
+          playerlist.style.display = "none";
         }
         console.log(data);
       });
