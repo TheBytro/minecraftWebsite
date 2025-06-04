@@ -54,7 +54,7 @@ const splashTexts = [
   "Absolutely no memes!",
   "Free dental!",
   "Ask your doctor!",
-  "Minors welcome!",
+  "Miners welcome!",
   "Cloud computing!",
   "Legal in Finland!",
   "Hard to label!",

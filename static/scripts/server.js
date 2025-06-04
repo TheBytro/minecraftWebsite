@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       request.open("POST", "/start", true);
       request.send();
       status.textContent = "Launching...";
+      butt.style.display = "none";
     }
   }
 
@@ -59,7 +60,10 @@ document.addEventListener("DOMContentLoaded", function () {
           butt.style.display = "block";
           playerlist.style.display = "none";
         }
-        console.log(data);
+        if (status.textContent === "Launching...")
+        {
+          butt.style.display = "none";
+        }
       });
   }
   update_info();
