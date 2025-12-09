@@ -58,8 +58,8 @@ def get_player_uuids(players: list) -> dict:
 def start() -> None:
     """Starts the minecraft server if the state is offline"""
     if get_server_info()["state"] == "Offline":
-        subprocess.run(r"A:\Games\Minecraft\modpacks\Curseforge\Instances\CompSci SERVER (1)\server_start.bat", shell=True,
-                   cwd=r"A:\Games\Minecraft\modpacks\Curseforge\Instances\CompSci SERVER (1)")
+        subprocess.run(r"Path/To/Server/Start/.bat", shell=True,
+                   cwd=r"Path/To/Server/Start")
     return None
 
 @app.route('/api/stats')
