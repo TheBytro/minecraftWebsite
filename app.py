@@ -10,7 +10,7 @@ from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
 
-serverinfo = ["172.30.84.148", 25565]
+serverinfo = ["Server_IP", 25565]
 
 @app.route('/')
 def index():
